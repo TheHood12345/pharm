@@ -15,11 +15,11 @@ function P_landing_1({day}){
                 </div>
             </div> */}
 
-            <div style={{width:"100%",display:"flex",marginTop:"6px",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange"}}>
+            <div style={{width:"100%",display:"flex",marginTop:"10px",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange"}}>
                 <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",color:"transparent",backgroundClip:"text",verflow:"scroll",borderBottom:"0.1px solid orange",fontSize:"10px"}}>Fast, Reliable & Secure Delivery!</div>
             </div>
 
-            <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"4px",marginTop:"4px",color:"white"}}>
+            <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
                 <div style={{width:"70%",paddingTop:"10px",paddingBottom:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly"}}><FaCartPlus/>MAKE ORDER</div>
             </div>
 

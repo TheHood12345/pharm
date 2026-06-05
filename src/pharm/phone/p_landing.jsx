@@ -49,7 +49,7 @@ function P_landing(){
             
         </div>
         <div style={{width:"100%",height:"5%",backgroundColor:"rgb(240,240,240)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                    <div style={{width:"90%",backgroundColor:"rgb(240,240,240)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
+                    <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
                     <FaSearch size={20} color="rgb(18,22,28)"/>
                     <input type="text" style={{paddingTop:"10px",paddingBottom:"10px",width:"90%",paddingLeft:"6px",paddingRight:"6px",border:"0px",backgroundColor:"transparent"}} placeholder="Search for medicines, brands or symptoms..."/>
                     </div>
