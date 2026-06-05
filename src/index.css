@@ -1,0 +1,64 @@
+html,body{
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  font-family: ja;
+  font-size:14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: white;
+}
+html{
+  width: 100%;
+  background-color: rgb(18, 22, 28);
+}
+
+@font-face{
+  font-family: "ja";
+  src: url("./assets/JAVATEXT.TTF");
+}
+@media screen and (max-width: 700px) {
+  body{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 701px) {
+  body{
+    width: 60%;
+  }
+}
+::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+input{
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: orange;
+  background-color: rgb(230,230,230);
+  color: black;
+}
+input:focus{
+  outline: none;
+  border-color: orange;
+  border-radius: 7px;
+}
+@media screen and (max-width:600px) {
+  #p_phone{
+    display: flex;
+  }
+  #p_laptop{
+    display: none;
+  }
+}
+@media screen and (min-width:601px) {
+  #p_phone{
+    display: none;
+  }
+  #p_laptop{
+    display: flex;
+  }
+}
