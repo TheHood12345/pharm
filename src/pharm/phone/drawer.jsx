@@ -2,13 +2,13 @@ import { useState } from "react";
 import { FaCartPlus, FaHistory, FaHome, FaLeaf, FaList, FaMailBulk, FaPhone, FaProductHunt, FaStore } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Drawer({drawer_width,set_drawer_width,drawer,set_drawer,day}){
+function Drawer({drawer_height,set_drawer_height,drawer,set_drawer,day}){
 
     return (
-        <div style={{width:`${drawer_width}%`,height:"90%",overflow:"hidden",transition:"all 0.1s linear",position:"absolute",top:"10%",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"end"}}>
-                <div style={{width:"40%",height:"100%",backgroundColor:"rgba(200,200,200,0.6)"}} onClick={()=>{
+        <div style={{width:`100%`,height:`${drawer_height}%`,overflow:"hidden",transition:"all 0.3s linear",position:"absolute",top:"10%",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"end"}}>
+                <div style={{width:"40%",height:"100%",backgroundColor:"transparent"}} onClick={()=>{
                     set_drawer(false);
-                    set_drawer_width(0);
+                    set_drawer_height(0);
                 }}></div>
                 <div style={{width:"60%",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"space-between",backgroundColor:"white",color:"rgb(18,22,28)"}}>
                     <div style={{width:"90%",height:"10%",marginTop:day==true?"0":"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"start",backgroundColor:"white"}}>

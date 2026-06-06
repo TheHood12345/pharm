@@ -6,23 +6,32 @@ function P_landing_1({day,set_num}){
 
     // const navigate = useNavigation();
     const [promo_width,set_promo_width] = useState(100);
+    const [m,set_m] = useState(0);
     const promo_images = ["/im5.jpg","/im2.png","/im3.jpg","/im4.png"]
     const [promo_image,set_promo_image] = useState("/im4.png");
     useEffect(()=>{
         setTimeout(()=>{
         if(promo_image == promo_images[0]){
             set_promo_image(promo_images[1]);
+            set_m(0);
         }
         if(promo_image == promo_images[1]){
-            set_promo_image(promo_images[2]);  
+            set_promo_image(promo_images[2]);
+            set_m(0);  
         }
         if(promo_image == promo_images[2]){
-             set_promo_image(promo_images[3]);  
+             set_promo_image(promo_images[3]);
+             set_m(0);  
         }
         if(promo_image == promo_images[3]){
-            set_promo_image(promo_images[0]); 
+            set_promo_image(promo_images[0]);
+            set_m(0); 
         }
+        setTimeout(()=>{
+                set_m(-100);
+        },100);
         },5000);
+        
     },[promo_image]);
 
     return (
@@ -36,11 +45,11 @@ function P_landing_1({day,set_num}){
             </div> */}
 
             <div style={{width:"100%",display:"flex",marginTop:"10px",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange"}}>
-                <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",color:"transparent",backgroundClip:"text",verflow:"scroll",borderBottom:"0.1px solid orange",fontSize:"10px"}}>Fast, Reliable & Secure Delivery!</div>
+                <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",color:"transparent",backgroundClip:"text",verflow:"scroll",borderBottom:"0.1px solid orange",fontSize:"20px",textAlign:"center",marginBottom:"20px"}}>Fast, Reliable & Secure Delivery!</div>
             </div>
 
-            <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
-                <div style={{width:"70%",paddingTop:"10px",paddingBottom:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly"}}><FaCartPlus/>MAKE ORDER</div>
+            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
+                <div style={{width:"70%",paddingTop:"10px",paddingBottom:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}><FaCartPlus/>MAKE ORDER</div>
             </div>
 
             <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white"}}>
@@ -55,7 +64,7 @@ function P_landing_1({day,set_num}){
                                 <div key={index} style={{height:"100%",flex:"0 0 10%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",scrollSnapAlign:"center",cursor:"pointer"}}>  
                                     <div style={{width:"100%",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                         <div style={{width:"40%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                                            <FaLeaf size={60}/>
+                                            <FaLeaf size={60} color={"rgb(200,200,200)"}/>
                                         </div>
                                     </div>
                                     <div style={{width:"100%",overflowX:"scroll",paddingTop:"3px",paddingBottom:"3px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
@@ -73,9 +82,9 @@ function P_landing_1({day,set_num}){
                 <div style={{width:"50%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundColor:"orange",border:"1px solid orange",color:"white",cursor:"pointer"}}><div>View Products</div> <FaCaretRight/></div>
             </div> */}
 
-            <div style={{width:"90%",paddingTop:"1%",paddingBottom:"1%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundColor:"rgb(240,240,240)",borderRadius:"10px"}}>
-                <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                    <div style={{width:"100%",paddingTop:"5%",paddingBottom:"5%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",borderRadius:"10px"}}>
+            <div style={{width:"90%",marginTop:"10px",paddingTop:"1%",paddingBottom:"1%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundColor:"rgb(240,240,240)",borderRadius:"10px"}}>
+                <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden"}}>
+                    <div className="m" style={{width:"100%",paddingTop:"5%",paddingBottom:"5%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",borderRadius:"10px",position:"relative",top:"0%"}}>{/*right:`${m}%` ,transition:"all 1s linear"*/}
                         <img src={promo_image} alt="Promo" style={{width:`${promo_width}%`,aspectRatio:"2/1",borderRadius:"10px"}}/>
                     </div>
                 </div>

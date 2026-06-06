@@ -7,7 +7,7 @@ import { FaCartShopping, FaImagePortrait } from "react-icons/fa6";
 function P_landing(){
 
     const [drawer,set_drawer]=useState(false);
-    const [drawer_width,set_drawer_width]=useState(0);
+    const [drawer_height,set_drawer_height]=useState(0);
     const [day,set_day] = useState(true);
     const [num,set_num] = useState(0);
     return (
@@ -35,21 +35,21 @@ function P_landing(){
                 <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
                     {drawer==false?<FaImagePortrait size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_drawer(!drawer);
-                        set_drawer_width(100);
+                        set_drawer_height(90);
                     }}/>:
                     <FaImagePortrait size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_drawer(!drawer);
-                        set_drawer_width(0);
+                        set_drawer_height(0);
                     }}/>}
                 </div>
                 <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
                     {drawer==false?<FaList size={20} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
                         set_drawer(!drawer);
-                        set_drawer_width(100);
+                        set_drawer_height(90);
                     }}/>:
                     <FaList size={20} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
                         set_drawer(!drawer);
-                        set_drawer_width(0);
+                        set_drawer_height(0);
                     }}/>}
                 </div>
             </div>
@@ -66,7 +66,7 @@ function P_landing(){
         {/* DRAWER */}
         {
             // drawer&&
-            <Drawer drawer_width={drawer_width} drawer={drawer} set_drawer_width={set_drawer_width} set_drawer={set_drawer} day={day}/>
+            <Drawer drawer_height={drawer_height} drawer={drawer} set_drawer_height={set_drawer_height} set_drawer={set_drawer} day={day}/>
         }
     </div>
     );
