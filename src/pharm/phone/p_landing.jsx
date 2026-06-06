@@ -2,13 +2,14 @@ import { useState } from "react";
 import { FaCartPlus, FaHistory, FaLeaf, FaList, FaMailBulk, FaMoon, FaPhone, FaProductHunt, FaSearch, FaStore, FaSun } from "react-icons/fa";
 import Drawer from "./drawer";
 import P_landing_1 from "./p_landing_1";
-import { FaImagePortrait } from "react-icons/fa6";
+import { FaCartShopping, FaImagePortrait } from "react-icons/fa6";
 
 function P_landing(){
 
     const [drawer,set_drawer]=useState(false);
     const [drawer_width,set_drawer_width]=useState(0);
     const [day,set_day] = useState(true);
+    const [num,set_num] = useState(0);
     return (
     <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white"}}>
         <div style={{width:"100%",height:"10%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",boxShadow:"0px 0px 4px rgb(200,200,200)"}}>
@@ -24,6 +25,12 @@ function P_landing(){
                     <FaMoon size={20}  style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_day(!day);
                     }}/>}
+                </div>
+                <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end",position:"relative"}}>
+                    <FaCartShopping size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
+                    
+                    }}/>
+                    <div style={{backgroundColor:"rgba(255,0,0,0.8)",color:"white",position:"absolute",top:"1%",fontSize:"10px",display:"flex",flexDirection:"row",padding:"1px",alignItems:"center",justifyContent:"center",aspectRatio:"1/1",right:"0%",borderRadius:"100px",width:"50%",textAlign:"center"}}>{num}</div>
                 </div>
                 <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
                     {drawer==false?<FaImagePortrait size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
@@ -54,7 +61,7 @@ function P_landing(){
                     <input type="text" style={{paddingTop:"10px",paddingBottom:"10px",width:"90%",paddingLeft:"6px",paddingRight:"6px",border:"0px",backgroundColor:"transparent"}} placeholder="Search for medicines, brands or symptoms..."/>
                     </div>
         </div>
-        <P_landing_1 day={day}/>
+        <P_landing_1 day={day} set_num={set_num}/>
 
         {/* DRAWER */}
         {
