@@ -1,38 +1,24 @@
 import { FaArrowRight, FaCaretRight, FaCartPlus, FaCertificate, FaImage, FaLeaf, FaPlus, FaSearch } from "react-icons/fa";
 import { /*useNavigation*/ Link } from "react-router-dom";
-import {useState,useEffect} from "react";
+import {useState,useEffect,useRef} from "react";
 
 function P_landing_1({day,set_num}){
 
     // const navigate = useNavigation();
     const [promo_width,set_promo_width] = useState(100);
     const [m,set_m] = useState(0);
-    const promo_images = ["/im5.jpg","/im2.png","/im3.jpg","/im4.png"]
+    const promo_images = ["/im2.png","/im3.jpg","/im4.png"]
     const [promo_image,set_promo_image] = useState("/im4.png");
-    useEffect(()=>{
-        setTimeout(()=>{
-        if(promo_image == promo_images[0]){
-            set_promo_image(promo_images[1]);
-            set_m(0);
-        }
-        if(promo_image == promo_images[1]){
-            set_promo_image(promo_images[2]);
-            set_m(0);  
-        }
-        if(promo_image == promo_images[2]){
-             set_promo_image(promo_images[3]);
-             set_m(0);  
-        }
-        if(promo_image == promo_images[3]){
-            set_promo_image(promo_images[0]);
-            set_m(0); 
-        }
-        setTimeout(()=>{
-                set_m(-100);
-        },100);
-        },5000);
-        
-    },[promo_image]);
+    const scrollRef = useRef(null);
+    // useEffect(()=>{
+        // setInterval(()=>{
+        //         scrollRef.current.scrollLeft += scrollRef.current.clientWidth;
+        // },2000);
+        // setTimeout(()=>{
+        //         scrollRef.current.scrollLeft += scrollRef.current.clientWidth;
+        // },2000);
+
+    // },[]);
 
     return (
         <div style={{width:"100%",height:"85%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white",position:"relative"}}>
@@ -83,10 +69,17 @@ function P_landing_1({day,set_num}){
             </div> */}
 
             <div style={{width:"90%",marginTop:"10px",paddingTop:"1%",paddingBottom:"1%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundColor:"rgb(240,240,240)",borderRadius:"10px"}}>
-                <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden"}}>
-                    <div className="m" style={{width:"100%",paddingTop:"5%",paddingBottom:"5%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",borderRadius:"10px",position:"relative",top:"0%"}}>{/*right:`${m}%` ,transition:"all 1s linear"*/}
-                        <img src={promo_image} alt="Promo" style={{width:`${promo_width}%`,aspectRatio:"2/1",borderRadius:"10px"}}/>
-                    </div>
+                <div ref={scrollRef} style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",position:"relative",overflow:"scroll",gap:"10px",scrollSnapType:"x mandatory"}}>
+                    {
+                        promo_images.map((item,index)=>{
+                            return (
+                                <div key={index} style={{width:"100%",flex:"0 0 90%",paddingTop:"5%",paddingBottom:"5%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",borderRadius:"10px",position:"relative",top:"0%",scrollSnapAlign:"center",transition:"all 1s linear"}}>{/*right:`${m}%` ,transition:"all 1s linear"*/}
+                                    <img src={item} alt="Promo" style={{width:`${promo_width}%`,aspectRatio:"2/1",borderRadius:"10px"}}/>
+                                    <div style={{position:"absolute",backgroundColor:"rgba(18,22,28,0.8)",color:"white",width:"40%",paddingTop:"10px",paddingBottom:"10px",borderRadius:"10px",display:"flex",alignItems:"center",justifyContent:"center",bottom:"20%",left:"10%",cursor:"pointer"}}>Open now<FaArrowRight/></div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
 
@@ -101,7 +94,7 @@ function P_landing_1({day,set_num}){
             <hr style={{width:"80%"}}/>
             
             
-            <div style={{width:"100%",marginTop:"20px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
+            <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
                 <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Drugs & Health Products</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
@@ -111,9 +104,11 @@ function P_landing_1({day,set_num}){
                         [1,2,3,4,5].map((item,index)=>{
                             return (
                                 <div key={index} style={{width:"100%",height:"100%",flex:"0 0 50%",boxShadow:"0px 0px 10px rgb(240,240,240)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",borderRadius:"10px",fontSize:"10px",scrollSnapAlign:"center"}}>  
-                                    <div style={{width:"100%",position:"relative",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"6px"}}>
-                                        <div style={{width:"40%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                                    <div style={{width:"100%",height:"60%",position:"relative",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"6px"}}>
+                                        <div style={{width:"40%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                             <FaLeaf size={40} color={"rgb(200,200,200)"}/>
+                                            {/* <img src={"/im2.png"} alt="Promo" style={{width:`100%`,height:"90%",borderRadius:"10px"}}/> */}
+                                            
                                         </div>
                                         <div style={{position:"absolute",right:"0%",top:"0%",backgroundImage:"linear-gradient(to right,rgba(18,22,28,0.9),rgba(30,30,30,0.9))",color:"white",width:"50%",textAlign:"center",borderRadius:"10px"}}>In Stock</div>
                                     </div>
@@ -146,7 +141,7 @@ function P_landing_1({day,set_num}){
 
             <hr style={{width:"80%"}}/>
 
-             <div style={{width:"100%",marginTop:"20px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
+             <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
                 <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Body Lotions</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
@@ -191,7 +186,7 @@ function P_landing_1({day,set_num}){
 
             <hr style={{width:"80%"}}/>
 
-             <div style={{width:"100%",marginTop:"20px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
+             <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
                 <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Vaccines</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
