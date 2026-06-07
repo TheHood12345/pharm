@@ -67,17 +67,18 @@ function P_landing_1({day,set_num}){
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Browse Categories</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
                 </div>
-                <div style={{width:"90%",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
+                <div style={{width:"90%",aspectRatio:"5/1",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
                     {
                         ["Prescriptions","OTC","Wellness","Vitamins","First Aid","Personal Care","Skin Care","Energy","Antibiotics"].map((item,index)=>{
                             return (
-                                <div key={index} style={{height:"100%",flex:"0 0 10%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",scrollSnapAlign:"center",cursor:"pointer"}}>  
-                                    <div style={{width:"100%",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                                        <div style={{width:"40%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                                            <FaLeaf size={60} color={"rgb(200,200,200)"}/>
+                                <div key={index} style={{width:"10%",flex:"0 0 20%",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",scrollSnapAlign:"center",cursor:"pointer"}}>  
+                                    <div style={{width:"100%",height:"70%",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                                        <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                                            {/* <FaLeaf size={20} color={"rgb(200,200,200)"}/> */}
+                                            <img src={item=="Vitamins"?"/vitamin.svg":item=="First Aid"?"/first_aid.svg":"/pill.svg"} alt="category" style={{width:"100%",aspectRatio:"1/1"}}/>
                                         </div>
                                     </div>
-                                    <div style={{width:"100%",overflowX:"scroll",paddingTop:"3px",paddingBottom:"3px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+                                    <div style={{width:"100%",height:"30%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textWrap:"nowrap"}}>
                                         <div style={{fontSize:"10px"}}>{item}</div>
                                     </div>
                                 </div>
@@ -136,14 +137,14 @@ function P_landing_1({day,set_num}){
                             return (
                                 <div key={index} style={{width:"100%",height:"100%",flex:"0 0 40%",boxShadow:"0px 0px 10px rgb(240,240,240)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"start",borderRadius:"10px",fontSize:"10px",scrollSnapAlign:"center"}}>  
                                     <div style={{width:"100%",height:"60%",position:"relative",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"center",marginTop:"6px"}}>
-                                        <div style={{width:"40%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                                            <FaLeaf size={40} color={"rgb(200,200,200)"}/>
-                                            {/* <img src={"/im2.png"} alt="Promo" style={{width:`100%`,height:"90%",borderRadius:"10px"}}/> */}
+                                        <div style={{width:"50%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                                            {/* <FaLeaf size={40} color={"rgb(200,200,200)"}/> */}
+                                            <img src={"/vitamin.svg"} alt="Promo" style={{width:"100%",height:"100%",borderRadius:"10px"}}/>
                                             
                                         </div>
                                         <div style={{position:"absolute",right:"0%",top:"0%",backgroundImage:"linear-gradient(to right,rgba(18,22,28,0.9),rgba(30,30,30,0.9))",color:"white",width:"50%",textAlign:"center",borderRadius:"10px"}}>In Stock</div>
                                     </div>
-                                    <div style={{width:"100%",paddingTop:"3px",paddingBottom:"3px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+                                    <div style={{width:"100%",height:"40",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
                                         
                                         <div style={{width:"90%",fontFamily:"arial,sans-serif",display:"flex",flexDirection:"column",alignItems:"start",justifyContent:"center"}}>
                                             <div style={{fontWeight:"bold",fontSize:"14px"}}>Paracetamol 500mg</div>
