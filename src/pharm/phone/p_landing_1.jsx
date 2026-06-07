@@ -12,6 +12,20 @@ function P_landing_1({day,set_num}){
     const [promo_image,set_promo_image] = useState("/im4.png");
     const scrollRef = useRef(null);
     const [scroll_num,set_scroll_num]=useState(0);
+    const all = [
+        {title:"New Arrivals",content:[
+            {name:"Paracetamol 500mg",old_price:"500",new_price:"450",company:"Emzor",type:"Tablet (30s)",in_stock:true},
+            {name:"Panadol",old_price:"300",new_price:"200",company:"Emzor",type:"Tablet",in_stock:true},
+            {name:"Amatem softgel",new_price:"450",company:"Medicare",type:"Tablet",in_stock:false},
+            {name:"Ciprotab",old_price:"1700",new_price:"1500",company:"Medicare",type:"Cyrup",in_stock:true}
+        ]
+        },
+        {title:"Discount sales",content:[
+            {name:"Paracetamol 500mg",old_price:"500",new_price:"450",company:"Emzor",type:"Tablet (30s)",in_stock:true},
+            {name:"Panadol",old_price:"300",new_price:"200",company:"Emzor",type:"Tablet",in_stock:true},
+        ]
+        }
+    ]
     useEffect(()=>{
         setTimeout(()=>{
                 if(scroll_num>2){
@@ -45,7 +59,7 @@ function P_landing_1({day,set_num}){
     },[promo_images]);
 
     return (
-        <div style={{width:"100%",height:"85%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white",position:"relative"}}>
+        <div style={{width:"100%",height:"85%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white",position:"relative",scrollSnapType:"y mandatory"}}>
 
             {/* <div style={{width:"100%",backgroundColor:"rgb(240,240,240)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                 <div style={{width:"90%",backgroundColor:"rgb(240,240,240)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
@@ -67,11 +81,11 @@ function P_landing_1({day,set_num}){
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Browse Categories</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
                 </div>
-                <div style={{width:"90%",aspectRatio:"5/1",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
+                <div style={{width:"90%",aspectRatio:"4/1",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
                     {
                         ["Prescriptions","OTC","Wellness","Vitamins","First Aid","Personal Care","Skin Care","Energy","Antibiotics"].map((item,index)=>{
                             return (
-                                <div key={index} style={{width:"10%",flex:"0 0 20%",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",scrollSnapAlign:"center",cursor:"pointer"}}>  
+                                <div key={index} style={{width:"10%",flex:"0 0 25%",height:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",scrollSnapAlign:"center",cursor:"pointer"}}>  
                                     <div style={{width:"100%",height:"70%",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                         <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                             {/* <FaLeaf size={20} color={"rgb(200,200,200)"}/> */}
@@ -129,18 +143,19 @@ function P_landing_1({day,set_num}){
             </div> */}
 
             <hr style={{width:"80%"}}/>
-            
-            
-            <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
+            {/* <div style={{width:"80%",height:"1000px"}}> */}
+            {
+                all.map((item,index)=>{return (
+            <div key={index} style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
                 <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
-                    <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>New Arrivals</div>
+                    <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>{item.title}</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
                 </div>
                 <div style={{width:"90%",aspectRatio:"1/1",display:"flex",flexDirection:"row",alignItems:"start",gap:"20px",overflow:"scroll",scrollSnapType:"x mandatory"}}>
                     {
-                        [1,2,3,4,5].map((item,index)=>{
+                        item.content.map((item,index)=>{
                             return (
-                                <div key={index} style={{width:"100%",height:"100%",flex:"0 0 40%",boxShadow:"0px 0px 10px rgb(240,240,240)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"start",borderRadius:"10px",fontSize:"10px",scrollSnapAlign:"center"}}>  
+                                <div key={index} style={{width:"100%",height:"100%",flex:"0 0 40%",boxShadow:"0px 0px 10px rgb(240,240,240)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"space-between",borderRadius:"10px",fontSize:"10px",scrollSnapAlign:"center"}}>  
                                     <div style={{width:"100%",height:"60%",position:"relative",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"center",marginTop:"6px"}}>
                                         <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                             {/* <FaLeaf size={40} color={"rgb(200,200,200)"}/> */}
@@ -149,20 +164,22 @@ function P_landing_1({day,set_num}){
                                             }} alt="Promo" style={{width:"100%",height:"100%",borderRadius:"10px"}}/>
                                             
                                         </div>
-                                        <div style={{position:"absolute",right:"0%",top:"0%",backgroundImage:"linear-gradient(to right,rgba(18,22,28,0.9),rgba(30,30,30,0.9))",color:"white",width:"50%",textAlign:"center",borderRadius:"10px"}}>In Stock</div>
+                                        {item?.in_stock?
+                                        <div style={{position:"absolute",right:"0%",top:"0%",backgroundImage:"linear-gradient(to right,rgba(18,22,28,0.9),rgba(30,30,30,0.9))",color:"white",width:"50%",textAlign:"center",borderRadius:"10px"}}>In Stock</div>:
+                                        null}
                                     </div>
-                                    <div style={{width:"100%",height:"40",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+                                    <div style={{width:"100%",height:"40",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"space-between"}}>
                                         
-                                        <div style={{width:"90%",fontFamily:"arial,sans-serif",display:"flex",flexDirection:"column",alignItems:"start",justifyContent:"center"}}>
-                                            <div style={{fontWeight:"bold",fontSize:"14px"}}>Paracetamol 500mg</div>
-                                            <div>Tablets (30s)</div>
-                                            <div>MediLab</div>
+                                        <div style={{width:"90%",height:"70%",fontFamily:"arial,sans-serif",display:"flex",flexDirection:"column",alignItems:"start",justifyContent:"space-between"}}>
+                                            <div style={{fontWeight:"bold",fontSize:"14px"}}>{item?.name}</div>
+                                            <div>{item?.type}</div>
+                                            <div>{item?.company}</div>
                                             <div style={{fontWeight:"bold",fontSize:"14px",width:"90%",textAlign:"center",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"space-between"}}>
-                                                <div style={{textDecoration:"line-through"}}>#200</div>
-                                                <div>#100</div>
+                                                <div style={{textDecoration:"line-through"}}>{item.old_price? "#":null}{item?.old_price}</div>
+                                                <div>#{item?.new_price}</div>
                                             </div>
                                         </div>
-                                        <div style={{width:"100%",textDecoration:"none",paddingTop:"10px",paddingBottom:"10px",color:"white",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly",backgroundColor:"orange",cursor:"pointer",borderRadius:"6px",position:"relative"}} onClick={()=>{
+                                        <div style={{width:"100%",height:"30%",textDecoration:"none",paddingTop:"10px",paddingBottom:"10px",color:"white",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly",backgroundColor:"orange",cursor:"pointer",borderRadius:"6px",position:"relative"}} onClick={()=>{
                                             set_num(n=>n+=1);
                                         }}>
                                             <div>ADD TO CART</div>
@@ -174,8 +191,10 @@ function P_landing_1({day,set_num}){
                         })
                     }
                 </div>
-            </div>
-
+            </div>);
+            })
+}
+{/* </div> */}
             
             {/* <div style={{width:"100%",backgroundPosition:"center",backgroundSize:"cover",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",borderRadius:"6px"}}>
                 <div style={{width:"50%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",border:"1px solid orange",color:"orange",cursor:"pointer",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white"}}>Make Order <FaCartPlus/></div>
