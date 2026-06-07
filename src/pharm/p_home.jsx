@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa6";
 import P_landing from "./phone/p_landing";
 
 function P_Home(){

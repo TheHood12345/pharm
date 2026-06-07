@@ -7,7 +7,7 @@ function P_landing_1({day,set_num}){
     // const navigate = useNavigation();
     const [promo_width,set_promo_width] = useState(100);
     const [m,set_m] = useState(0);
-    const lis = ["/im2.png","/im_sand.svg","/im3.jpg","/im4.png"];
+    const lis = ["promo1.svg","promo2.svg","/im2.png","/im3.jpg","/im4.png","/im_sand.svg"];
     const [promo_images,set_promo_images] = useState([lis[0],lis[1],lis[2]]);
     const [promo_image,set_promo_image] = useState("/im4.png");
     const scrollRef = useRef(null);
@@ -58,7 +58,7 @@ function P_landing_1({day,set_num}){
                 <div style={{width:"70%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",color:"transparent",backgroundClip:"text",verflow:"scroll",borderBottom:"0.1px solid orange",fontSize:"20px",textAlign:"center",marginBottom:"20px"}}>Fast, Reliable & Secure Delivery!</div>
             </div>
 
-            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",color:"orange",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
+            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
                 <div style={{width:"70%",paddingTop:"10px",paddingBottom:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}><FaCartPlus/>MAKE ORDER</div>
             </div>
 
@@ -75,7 +75,9 @@ function P_landing_1({day,set_num}){
                                     <div style={{width:"100%",height:"70%",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                         <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                             {/* <FaLeaf size={20} color={"rgb(200,200,200)"}/> */}
-                                            <img src={item=="Vitamins"?"/vitamin.svg":item=="First Aid"?"/first_aid.svg":"/pill.svg"} alt="category" style={{width:"100%",aspectRatio:"1/1"}}/>
+                                            <img src={item=="Vitamins"?"/vitamin.svg":item=="First Aid"?"/first_aid.svg":"/pill.svg"} onError={(e)=>{
+                                                e.target.style.opacity="0";
+                                            }} alt="category" style={{width:"100%",aspectRatio:"1/1"}}/>
                                         </div>
                                     </div>
                                     <div style={{width:"100%",height:"30%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textWrap:"nowrap"}}>
@@ -99,7 +101,10 @@ function P_landing_1({day,set_num}){
                         promo_images.map((item,index)=>{
                             return (
                                 <div key={index} style={{width:"100%",flex:"0 0 90%",paddingTop:"5%",paddingBottom:"5%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",borderRadius:"10px",position:"relative",top:"0%",scrollSnapAlign:"center",transition:"all 1s linear"}}>{/*right:`${m}%` ,transition:"all 1s linear"*/}
-                                    <img src={item} alt="Promo" style={{width:`${promo_width}%`,aspectRatio:"2/1",borderRadius:"10px"}}/>
+                                    <img src={item} onError={(e)=>{
+                                        //e.target.src="/vitamin.svg";
+                                        e.target.style.opacity="0";
+                                    }} alt="Promo" style={{width:`${promo_width}%`,aspectRatio:"2/1",borderRadius:"10px"}}/>
                                     <div style={{position:"absolute",backgroundColor:"rgba(18,22,28,0.8)",color:"white",width:"40%",paddingTop:"10px",paddingBottom:"10px",borderRadius:"10px",display:"flex",alignItems:"center",justifyContent:"center",bottom:"20%",left:"10%",cursor:"pointer"}}>Open now<FaArrowRight/></div>
                                     
                                 </div>
@@ -137,9 +142,11 @@ function P_landing_1({day,set_num}){
                             return (
                                 <div key={index} style={{width:"100%",height:"100%",flex:"0 0 40%",boxShadow:"0px 0px 10px rgb(240,240,240)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"start",borderRadius:"10px",fontSize:"10px",scrollSnapAlign:"center"}}>  
                                     <div style={{width:"100%",height:"60%",position:"relative",background:"rgb(240,240,240)",borderRadius:"10px",display:"flex",flexDirection:"row",alignItems:"start",justifyContent:"center",marginTop:"6px"}}>
-                                        <div style={{width:"50%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+                                        <div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
                                             {/* <FaLeaf size={40} color={"rgb(200,200,200)"}/> */}
-                                            <img src={"/vitamin.svg"} alt="Promo" style={{width:"100%",height:"100%",borderRadius:"10px"}}/>
+                                            <img src={"/vitamin.svg"} onError={(e)=>{
+                                                e.target.style.opacity="0";
+                                            }} alt="Promo" style={{width:"100%",height:"100%",borderRadius:"10px"}}/>
                                             
                                         </div>
                                         <div style={{position:"absolute",right:"0%",top:"0%",backgroundImage:"linear-gradient(to right,rgba(18,22,28,0.9),rgba(30,30,30,0.9))",color:"white",width:"50%",textAlign:"center",borderRadius:"10px"}}>In Stock</div>

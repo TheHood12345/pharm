@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+<rect width="200" height="200" fill="wheat"/>
+<text x="40" y="20" font-size="20" stroke="orangered">
+    PROMO DAY !!
+</text>
+<text x="60" y="40" font-size="10">
+    JOIN US ON OUR
+</text>
+<text x="45" y="60" font-size="13">
+    WhatsApp CHANNEL
+</text>
+<text x="10" y="80" font-size="20" stroke="orangered">
+    FOR 10% DISCOUNT
+    <animate attributeName="y" values="80;200;80" repeatCount="indefinite" dur="2"/>
+</text>
+</svg>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaCartPlus, FaHistory, FaLeaf, FaList, FaMailBulk, FaMoon, FaPhone, FaProductHunt, FaSearch, FaStore, FaSun } from "react-icons/fa";
 import Drawer from "./drawer";
 import P_landing_1 from "./p_landing_1";
-import { FaCartShopping, FaImagePortrait } from "react-icons/fa6";
+import { FaCartShopping, FaImagePortrait, FaWhatsapp } from "react-icons/fa6";
 
 function P_landing(){
 
@@ -18,36 +18,36 @@ function P_landing(){
                     <FaLeaf size={30} color="aquamarine"/>
                     <div>PHARMACY</div>
                 </div>
-                <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
-                    {day==false?<FaSun size={20}  style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
+                <div style={{width:"20%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
+                    {day==false?<FaSun size={25}  style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_day(!day);
                     }}/>:
-                    <FaMoon size={20}  style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
+                    <FaMoon size={25}  style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_day(!day);
                     }}/>}
                 </div>
-                <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end",position:"relative"}}>
-                    <FaCartShopping size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
-                    
+                <div style={{width:"20%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end",position:"relative"}}>
+                    <FaCartShopping size={25} style={{cursor:"pointer",zIndex:"2"}} title="Dashboard" onClick={()=>{
+        
                     }}/>
-                    <div style={{backgroundColor:"rgba(255,0,0,0.8)",color:"white",position:"absolute",top:"1%",fontSize:"10px",display:"flex",flexDirection:"row",padding:"1px",alignItems:"center",justifyContent:"center",aspectRatio:"1/1",right:"0%",borderRadius:"100px",width:"50%",textAlign:"center"}}>{num}</div>
+                    <div style={{backgroundColor:"rgba(255,0,0,0.7)",zIndex:"1",color:"white",position:"absolute",top:"1%",fontSize:"10px",display:"flex",flexDirection:"row",padding:"1px",alignItems:"center",justifyContent:"center",aspectRatio:"1/1",right:"0%",borderRadius:"100px",width:"50%",textAlign:"center"}}>{num}</div>
                 </div>
-                <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
-                    {drawer==false?<FaImagePortrait size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
+                <div style={{width:"20%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
+                    {drawer==false?<FaImagePortrait size={25} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_drawer(!drawer);
                         set_drawer_height(90);
                     }}/>:
-                    <FaImagePortrait size={20} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
+                    <FaImagePortrait size={25} style={{cursor:"pointer"}} title="Dashboard" onClick={()=>{
                         set_drawer(!drawer);
                         set_drawer_height(0);
                     }}/>}
                 </div>
-                <div style={{width:"10%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
-                    {drawer==false?<FaList size={20} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
+                <div style={{width:"20%",height:"100%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"end"}}>
+                    {drawer==false?<FaList size={25} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
                         set_drawer(!drawer);
                         set_drawer_height(90);
                     }}/>:
-                    <FaList size={20} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
+                    <FaList size={25} style={{cursor:"pointer"}}  title="Menu" onClick={()=>{
                         set_drawer(!drawer);
                         set_drawer_height(0);
                     }}/>}
@@ -68,6 +68,15 @@ function P_landing(){
             // drawer&&
             <Drawer drawer_height={drawer_height} drawer={drawer} set_drawer_height={set_drawer_height} set_drawer={set_drawer} day={day}/>
         }
+
+        <div style={{position:"absolute",left:"10%",bottom:"10%",display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <div style={{background:"rgba(127, 255, 212, 0.662)",padding:"10px",borderRadius:"100px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+                <FaWhatsapp size={20}/>
+            </div>
+            <div style={{background:"rgba(127, 255, 212, 0.662)",padding:"10px",marginTop:"10px",borderRadius:"100px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+                <FaPhone size={20}/>
+            </div>
+        </div>
     </div>
     );
 }

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+<rect width="200" height="200" fill="purple"/>
+
+
+<circle cx="5" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="3s"/>    
+    </circle>
+    <circle cx="45" cy="30" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="2s"/>    
+    </circle>
+    <circle cx="35" cy="10" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="3s"/>    
+    </circle>
+    <circle cx="75" cy="10" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="3s"/>    
+    </circle>
+    <circle cx="75" cy="70" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="2s"/>    
+    </circle>
+    <circle cx="25" cy="70" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="4s"/>    
+    </circle>
+    <circle cx="30" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="7s"/>    
+    </circle>
+    <circle cx="50" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="5s"/>    
+    </circle>
+    <circle cx="60" cy="80" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="1s"/>    
+    </circle>
+
+    <circle cx="105" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="8s"/>    
+    </circle>
+    <circle cx="145" cy="30" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="9s"/>    
+    </circle>
+    <circle cx="135" cy="10" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="10s"/>    
+    </circle>
+    <circle cx="175" cy="10" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="11s"/>    
+    </circle>
+    <circle cx="175" cy="70" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="5s"/>    
+    </circle>
+    <circle cx="125" cy="70" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="1s"/>    
+    </circle>
+    <circle cx="130" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="2s"/>    
+    </circle>
+    <circle cx="150" cy="60" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="3s"/>    
+    </circle>
+    <circle cx="160" cy="80" r="3" fill="#200a0a" fill-opacity="0.3">
+        <animate attributeName="cy" from="210" to="-10" repeatCount="indefinite" dur="4s"/>    
+    </circle>
+
+    <text x="40" y="40" font-size="20" stroke="wheat">
+    GET 
+</text>
+<text x="60" y="60" font-size="20" stroke="wheat">
+    GIFT CARD
+</text>
+<text x="70" y="120" font-size="20" stroke="wheat">
+   100% FREE !!
+</text>
+</svg>
