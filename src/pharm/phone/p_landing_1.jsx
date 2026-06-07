@@ -7,15 +7,19 @@ function P_landing_1({day,set_num}){
     // const navigate = useNavigation();
     const [promo_width,set_promo_width] = useState(100);
     const [m,set_m] = useState(0);
-    const lis = ["/im2.png","/im3.jpg","/im4.png"];
+    const lis = ["/im2.png","/im_sand.svg","/im3.jpg","/im4.png"];
     const [promo_images,set_promo_images] = useState([lis[0],lis[1],lis[2]]);
     const [promo_image,set_promo_image] = useState("/im4.png");
     const scrollRef = useRef(null);
     const [scroll_num,set_scroll_num]=useState(0);
     useEffect(()=>{
         setTimeout(()=>{
-                scrollRef.current.scrollLeft += scrollRef.current.clientWidth;
-                set_promo_images([lis[0],lis[1],lis[2]]);
+                if(scroll_num>2){
+                    scrollRef.current.scrollLeft = scrollRef.current.clientWidth * 0;
+                }else{
+                    scrollRef.current.scrollLeft += scrollRef.current.clientWidth;
+                }
+                set_promo_images([lis[0],lis[1],lis[2],lis[3]]);
                 if(scroll_num>2){
                     set_scroll_num(0);
                 }else{
@@ -32,11 +36,11 @@ function P_landing_1({day,set_num}){
                 // });
         },3000);
 
-        return ()=>{
-            if(scroll_num>2){
-             scrollRef.current.scrollLeft = scrollRef.current.clientWidth * 0;
-            }
-        }
+        // return ()=>{
+        //     if(scroll_num>2){
+        //      scrollRef.current.scrollLeft = scrollRef.current.clientWidth * 0;
+        //     }
+        // }
 
     },[promo_images]);
 
@@ -106,6 +110,7 @@ function P_landing_1({day,set_num}){
                     <div style={{backgroundColor:scroll_num==0?"rgba(18,22,28,0.4)":"transparent",border:scroll_num==0?"0px":"1px solid rgba(18,22,28,0.4)",padding:"3px",borderRadius:"100px",cursor:"pointer"}}></div>
                     <div style={{backgroundColor:scroll_num==1?"rgba(18,22,28,0.4)":"transparent",border:scroll_num==1?"0px":"1px solid rgba(18,22,28,0.4)",padding:"3px",borderRadius:"100px",cursor:"pointer"}}></div>
                     <div style={{backgroundColor:scroll_num==2?"rgba(18,22,28,0.4)":"transparent",border:scroll_num==2?"0px":"1px solid rgba(18,22,28,0.4)",padding:"3px",borderRadius:"100px",cursor:"pointer"}}></div>
+                    <div style={{backgroundColor:scroll_num==3?"rgba(18,22,28,0.4)":"transparent",border:scroll_num==3?"0px":"1px solid rgba(18,22,28,0.4)",padding:"3px",borderRadius:"100px",cursor:"pointer"}}></div>
                 </div>
             </div>
 
