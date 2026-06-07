@@ -88,7 +88,7 @@ function P_landing_1({day,set_num}){
             </div> */}
 
             <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",backgroundImage:"linear-gradient(to right,red,orange)",borderRadius:"10px",marginTop:"4px",color:"white"}}>
-                <div style={{width:"70%",paddingTop:"10px",paddingBottom:"10px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}><FaCartPlus/>MAKE ORDER</div>
+                <div style={{width:"70%",paddingTop:"20px",paddingBottom:"20px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}><FaCartPlus/>MAKE ORDER</div>
             </div>
 
             <div style={{width:"100%",marginTop:"10px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",backgroundColor:day==true?"white":"rgb(18,22,28)",color:day==true?"rgb(18,22,28)":"white"}}>
@@ -96,7 +96,7 @@ function P_landing_1({day,set_num}){
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>Browse Categories</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
                 </div>
-                <div style={{width:"90%",aspectRatio:"4/1",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
+                <div style={{width:"90%",aspectRatio:"3/1",display:"flex",flexDirection:"row",overflowX:"auto",gap:"10px",scrollSnapType:"x mandatory"}}>
                     {
                         ["Prescriptions","OTC","Wellness","Vitamins","First Aid","Personal Care","Skin Care","Energy","Antibiotics"].map((item,index)=>{
                             return (
@@ -125,7 +125,7 @@ function P_landing_1({day,set_num}){
          
             {
                 all.map((item,index)=>{return (
-            <div key={index} style={{width:"100%",height:"60%",paddingTop:"20px",paddingBottom:"20px",marginTop:"0px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
+            <div key={index} style={{width:"100%",height:"60%",flex:"0 0 50%",paddingBottom:"20px",marginTop:"0px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",color:day==true?"rgb(18,22,28)":"white"}}>
                 <div style={{width:"90%",height:"10%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
                     <div style={{fontFamily:"arial,sans-serif",fontWeight:"bold"}}>{item.title}</div>
                     <div style={{color:"orange",cursor:"pointer"}}>See all <FaArrowRight/></div>
@@ -158,7 +158,7 @@ function P_landing_1({day,set_num}){
                                                 <div>#{item?.new_price}</div>
                                             </div>
                                         </div>
-                                        <div style={{width:"100%",height:"30%",textDecoration:"none",paddingTop:"10px",paddingBottom:"10px",color:"white",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly",backgroundColor:"orange",cursor:"pointer",borderRadius:"6px",position:"relative"}} onClick={()=>{
+                                        <div style={{width:"100%",height:"30%",textDecoration:"none",paddingTop:"20px",paddingBottom:"20px",color:"white",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly",backgroundColor:"orange",cursor:"pointer",borderRadius:"6px",position:"relative"}} onClick={()=>{
                                             set_num(n=>n+=1);
                                         }}>
                                             <div>ADD TO CART</div>
