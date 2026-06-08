@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash, FaGoogle, FaTwitter } from "react-icons/fa";
 import { data, Link, useNavigate } from "react-router-dom";
 
 function Login(){
-    const log_data = "https://backend-sbs.nellalink.com/public/api/v1/nellalink/auth/user/login"
+    const log_data = "http://127.0.0.1:8000/auth/user/login"
     const [eye,set_eye] = useState(false);
 
     const [email,set_email] = useState("");
@@ -15,22 +15,22 @@ function Login(){
 
     async function login(){
         set_loading(true);
-        console.log(email)
-        console.log(password)
         await fetch(log_data,{
             method:"post",
+            headers: {
+                contentType: "application/json"
+            },
             body: JSON.stringify({
                 email: email,
                 password: password
             })
-        }).then((res)=>{
+        }).then(async(res)=> await res.json()).then((data)=>{
             set_loading(false);
-            console.log("success",res.text());
-            navigate("/nella");
+            console.log("loaded:  ",data);
         }).catch((err)=>{
             set_loading(false);
-            console.log(`nope: ${err}`)
-            navigate("/nella");
+            console.log(`Couldn't make reuest: ${err}`)
+            // navigate("/");
         });
     }
 

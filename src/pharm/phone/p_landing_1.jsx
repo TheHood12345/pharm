@@ -122,6 +122,7 @@ function P_landing_1({day,set_num}){
             
 
             <hr style={{width:"80%"}}/>
+            
          
             {
                 all.map((item,index)=>{return (

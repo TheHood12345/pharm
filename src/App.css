@@ -31,3 +31,6 @@
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
+/* input{
+  outline: none;
+} */

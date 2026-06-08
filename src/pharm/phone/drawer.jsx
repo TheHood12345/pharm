@@ -18,40 +18,40 @@ function Drawer({drawer_height,set_drawer_height,drawer,set_drawer,day}){
                     <div style={{width:"90%",fontSize:"12px",height:"80%",display:"flex",flexDirection:"column",alignItems:"start",justifyContent:"space-between",backgroundColor:"white"}}>
                       <div style={{width:"100%",height:"100%",overflow:"scroll",display:"flex",flexDirection:"column",alignItems:"start",justifyContent:"start"}}>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>My Dashboard</div><FaHome/>
                             </div>
                         </div>
                         <hr style={{width:"90%",border:"1px solid orange"}}/>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>Make Order</div><FaCartPlus/>
                             </div>
                         </div>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>Available Products</div><FaStore/>
                             </div>
                         </div>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>Promotions</div><FaProductHunt/>
                             </div>
                         </div>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>History</div><FaHistory/>
                             </div>
                         </div>
                         <hr style={{width:"90%",border:"1px solid orange"}}/>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>Call us</div><FaPhone/>
                             </div>
                         </div>
                         <div style={{width:"100%",textAlign:"center",marginTop:"4%"}}>OR</div>
                         <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                            <div style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                 <div>Email us</div><FaMailBulk/>
                             </div>
                         </div>
@@ -59,17 +59,17 @@ function Drawer({drawer_height,set_drawer_height,drawer,set_drawer,day}){
                         <div style={{width:"100%",borderRadius:"3px",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
                             <div style={{color:"orange"}}>Our addresses</div>
                             <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                     <li>1 Shelter Afrique Estate, Uyo, Akwa Ibom State</li>
                                 </ul>
                             </div>
                             <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                     <li>Banana Island, Lagos State</li>
                                 </ul>
                             </div>
                             <div style={{width:"100%",borderRadius:"3px",boxShadow:"0px 0px 10px rgb(200,200,200)",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center",marginTop:"4%",paddingTop:"1%",paddingBottom:"1%",cursor:"pointer"}}>
-                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"10px",paddingBottom:"10px"}}>
+                                <ul style={{width:"90%",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingTop:"20px",paddingBottom:"20px"}}>
                                     <li>Transcorp Hilton, Abuja FCT</li>
                                 </ul>
                             </div>
